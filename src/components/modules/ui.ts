@@ -152,17 +152,15 @@ export default class UI extends Module {
      */
     await this.appendSVGSprite();
 
-    if (!this.config.hideToolbar) {
-      /**
-       * Make toolbar
-       */
-      await this.Editor.Toolbar.make();
+    /**
+     * Make toolbar
+     */
+    await this.Editor.Toolbar.make();
 
-      /**
-       * Make the Inline toolbar
-       */
-      await this.Editor.InlineToolbar.make();
-    }
+    /**
+     * Make the Inline toolbar
+     */
+    await this.Editor.InlineToolbar.make();
 
     /**
      * Load and append CSS
