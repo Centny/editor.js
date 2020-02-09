@@ -330,6 +330,10 @@ export default class BlockEvents extends Module {
    * @param {KeyboardEvent} event - keydown
    */
   private backspace(event: KeyboardEvent): void {
+    /**
+     * Emit backspace keydown events
+     */
+    this.Editor.Events.emit('keyBackspace', { event, editor: this.Editor });
     const { BlockManager, BlockSelection, Caret } = this.Editor;
     const currentBlock = BlockManager.currentBlock;
     const tool = this.Editor.Tools.available[currentBlock.name];

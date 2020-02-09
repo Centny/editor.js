@@ -27,6 +27,11 @@ export default class EditorJS {
   public isReady: Promise<void>;
 
   /**
+   * Public the editor core
+   */
+  public core: Core;
+
+  /**
    * Stores destroy method implementation.
    * Clear heap occupied by Editor and remove UI components from the DOM.
    */
@@ -69,6 +74,8 @@ export default class EditorJS {
       this.exportAPI(editor);
       onReady();
     });
+
+    this.core = editor;
   }
 
   /**
