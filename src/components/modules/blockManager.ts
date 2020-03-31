@@ -40,7 +40,7 @@ export default class BlockManager extends Module {
     if (this._blocks[newIndex]) {
       this._blocks[newIndex].willSelect();
     }
-
+    this.Editor.Events.emit('selectedChange', {old: this._currentBlockIndex, new: newIndex});
     this._currentBlockIndex = newIndex;
   }
 
